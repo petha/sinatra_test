@@ -1,0 +1,30 @@
+<h1>All blog posts
+    <a href="/posts/new" class="pull-right btn btn-default">
+        Create new post
+    </a>
+</h1>
+
+<table class="table table-striped">
+<thead>
+       <tr>
+           <th colspan="2">
+               <form class="pull-right form-inline" role="search">
+                   <div class="form-group">
+                       <input type="text" placeholder="Filter" class="form-control" ng-model="searchText">
+                   </div>
+               </form>
+           </th>
+       </tr>
+</thead>
+    <tbody>
+        <tr ng-repeat="post in posts | filter:searchText">
+            <td><a href="/posts/{{post.id}}">{{post.name}}</a></td>
+            <td>
+                <div class="pull-right">
+                <a  href="/posts/edit/{{post.id}}" class="btn btn-default">Edit</a>
+                <div class="btn btn-danger" ng-click="destroy(post)">Delete</div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

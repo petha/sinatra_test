@@ -1,0 +1,12 @@
+<form role="form" ng-submit="submit()">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input ng-model="post.name" class="form-control" id="title" placeholder="Enter title">
+    </div>
+    <div class="form-group">
+        <label for="body">Body text</label>
+        <textarea ng-model="post.body" class="form-control" id="body" ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

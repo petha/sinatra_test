@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="blogg">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular-route.min.js"></script>
+    <script src="/javascript/controller.js"></script>
+    <title>Testar</title>
+</head>
+<body>
+
+<!-- Static navbar -->
+<div class="navbar navbar-default navbar-static-top" ng-controller="HeaderController" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Blog posts admin</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{ active: isActive('/')}"><a href="/">List all blog posts</a></li>
+                <li ng-class="{ active: isActive('/posts/new')}"><a href="/posts/new">Create new blog post</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+<div class="container" ng-view></div>
+<div id="footer">
+    <div class="container">
+        <p class="text-muted">Backend with Sinatra, ActiveRecord and frontend with Bootstrap and AngularJS.</p>
+    </div>
+</div>
+
+</body>
+</html>
